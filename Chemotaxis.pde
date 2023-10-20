@@ -3,7 +3,6 @@ Bacteria[] colony;
 void setup()   
 {     
    size(300, 300);
-   frameRate(60);
    colony = new Bacteria[10];
    for (int i = 0; i < colony.length; i++)
      colony[i] = new Bacteria();
@@ -49,9 +48,9 @@ class Bacteria
      theta = theta % (2*PI);
    }
    void show(){
-     int k = (int)(10*(Math.random()-0.5));
+     int k = (int)(10*(Math.random() - 0.5));
      if (dist(x, y, mouseX, mouseY) < 100){
-       fill(R, G, B, (float)(Math.random()*255));
+       fill(R, G, B, (float)((Math.random() + 1)*255/2));
        ellipse(x, y, 20 + k, 20 + k);
      } else {
        fill(R, G, B);
